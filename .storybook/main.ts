@@ -1,10 +1,13 @@
 const path = require('path')
 
 module.exports = {
-  typescript : { reactDocgen: false },
+  typescript: { reactDocgen: false },
   stories: ['../src/**/*.stories.@(ts|tsx|js|jsx|mdx)'],
   staticDirs: ['../public'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials'
+  ],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,
