@@ -1,9 +1,9 @@
 import { ComponentMeta } from "@storybook/react";
-import { InfoTxt, Txt } from ".";
+import { InfoTxt } from ".";
 
-const metaData: ComponentMeta<typeof Txt> = {
+const metaData: ComponentMeta<typeof InfoTxt> = {
   title: 'atoms/Txt/InfoTxt',
-  component: Txt
+  component: InfoTxt
 }
 export default metaData
 
