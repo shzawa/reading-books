@@ -6,7 +6,7 @@ import { InfoTxt } from "../../atoms/Txt"
 import { DeleteButton, DeleteButtonProps } from "../../molecules/DeleteButton"
 import styles from './styles.module.scss'
 
-type Program = {
+export type Program = {
   thumbnail: string // TODO: Union Type
   channelName: string
   title: string
