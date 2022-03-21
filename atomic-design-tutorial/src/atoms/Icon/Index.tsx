@@ -37,7 +37,7 @@ export const iconFactory: (iconName: string) => (props: IconProps) => JSX.Elemen
       presenter={presenterProps => (
           <IconPresenter {...presenterProps} />
       )}
-      {...{ onClick, iconName, props }}
+      {...{ onClick, iconName, ...props }}
     />
   )
 

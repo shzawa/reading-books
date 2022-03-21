@@ -9,7 +9,7 @@ export const TimePresenter: React.VFC<TimePresenterProps> = props => <time {...p
 type TimeContainerProps = Omit<TimePresenterProps, 'children'> & {
   presenter: React.VFC<TimePresenterProps>
   format?: string
-  children: string
+  children: string | number
 }
 export const TimeContainer: React.VFC<TimeContainerProps> = ({
   presenter,
@@ -18,7 +18,7 @@ export const TimeContainer: React.VFC<TimeContainerProps> = ({
   format = 'MM月dd日(E)HH:mm',
   ...props
 }) => {
-  const unitTime = parseInt(value, 10) * 1000
+  const unitTime = parseInt(`${value}`, 10) * 1000
   const children = isValid(unitTime) ? formatDatetime(unitTime, format) : '有効な時間表現ではありません'
 
   // 有効な時間表現でない場合は、dateTime属性を非表示
