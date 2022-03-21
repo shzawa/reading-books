@@ -7,8 +7,9 @@ const Level = {
 type LevelType = {[P in keyof typeof Level]: P}[keyof typeof Level]
 type HeadingLevelType = typeof Level[keyof typeof Level]
 
-type HeadingPresenterProps = Omit<HeadingProps, 'level'> & {
+type HeadingPresenterProps = HTMLAttributes<HTMLHeadingElement> & {
   tag: HeadingLevelType
+  visualLevel?: LevelType
 }
 export const HeadingPresenter: React.VFC<HeadingPresenterProps> = ({
   tag: Tag,
@@ -21,7 +22,6 @@ export const HeadingPresenter: React.VFC<HeadingPresenterProps> = ({
     {...props}
   />
 )
-
 export const HeadingUnderlinedPresenter: React.VFC<HeadingPresenterProps> = ({
   tag: Tag,
   visualLevel,
@@ -34,8 +34,9 @@ export const HeadingUnderlinedPresenter: React.VFC<HeadingPresenterProps> = ({
   />
 )
 
-type HeadingContainerProps = HeadingProps & {
+type HeadingContainerProps = Omit<HeadingPresenterProps, 'tag'> & {
   presenter: React.VFC<HeadingPresenterProps>
+  level?: LevelType
 }
 export const HeadingContainer: React.VFC<HeadingContainerProps> = ({
   presenter,
@@ -48,10 +49,7 @@ export const HeadingContainer: React.VFC<HeadingContainerProps> = ({
   return presenter({tag, visualLevel: changedVisualLevel, ...props})
 }
 
-type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
-  level?: LevelType
-  visualLevel?: LevelType
-}
+type HeadingProps = Omit<HeadingContainerProps, 'presenter'>
 export const Heading: React.VFC<HeadingProps> = props => (
   <HeadingContainer presenter={
       (presenterProps) => (
