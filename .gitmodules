@@ -1,3 +1,6 @@
 [submodule "star-rating"]
 	path = star-rating
 	url = git@github.com:shzawa/star-rating.git
+[submodule "waterfall-request"]
+	path = waterfall-request
+	url = git@github.com:shzawa/waterfall-request.git
