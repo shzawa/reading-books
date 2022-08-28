@@ -4,3 +4,6 @@
 [submodule "waterfall-request"]
 	path = waterfall-request
 	url = git@github.com:shzawa/waterfall-request.git
+[submodule "waterfall-request-graphql"]
+	path = waterfall-request
+	url = git@github.com:shzawa/waterfall-request-graphql.git
