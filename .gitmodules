@@ -7,3 +7,6 @@
 [submodule "waterfall-request-graphql"]
 	path = waterfall-request
 	url = git@github.com:shzawa/waterfall-request-graphql.git
+[submodule "suspense-tutorial"]
+	path = waterfall-request
+	url = git@github.com:shzawa/suspense-tutorial.git
